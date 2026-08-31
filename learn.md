@@ -1,0 +1,2 @@
+- can add `head` tag before `body` to add Gtag with `dangerouslySetInnerHTML`
+- prefer - `GoogleTagManager` component from `@next/third-parties/google` (ss available)
