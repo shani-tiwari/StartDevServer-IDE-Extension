@@ -13,13 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://sds-startdevserver.vercel.app"
-  ),
+  metadataBase: new URL( "https://sds.shaniweb.com"),
   title: "SDS - Start Dev Server - Run Your React & Next.js Projects in a Click",
   description:
     "Start your development server and auto-redirect to a new browser tab with localhost URL in a single click. The essential tool for React and Next.js developers.",
-  applicationName: "Start Dev Server (SDS)",
+  alternates: {
+    canonical: "/",
+  },
+  applicationName: "SDS - Start Dev Server",
   authors: [
     {
       name: "Shani Tiwari",
@@ -64,8 +65,8 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: "/sds-logo.png",
-    apple: "/sds-logo.png",
+    icon: "/sds-logo-2.png",
+    apple: {url: "/sds-logo-2.png", sizes: "192x192", type: "image/png"}
   },
 };
 
