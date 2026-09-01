@@ -4,7 +4,7 @@ import PrimaryButton from "./PrimaryButton";
 export default function Navbar() {
     return (
         <>
-            <div className=" fixed top-2 w-full z-999 px-2">
+            <div className="fixed top-2 w-full z-99 px-2">
                 <nav className="max-w-275 px-4 md:px-6 mt-2 py-2 bg-background backdrop-blur-xs flex justify-between mx-auto border border-stone-300 rounded-full">
 
                     <div className="hidden md:flex items-center justify-center">

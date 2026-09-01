@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { createPortal } from "react-dom";
 
 
 
@@ -39,7 +40,7 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
             </button>
 
             {/* Modal Popup with Backdrop Blur */}
-            { showModal && (
+            { showModal && createPortal(
                 <div
                     role="dialog"
                     aria-modal="true"
@@ -87,12 +88,13 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
 
 
                         <div className="flex flex-col items-center justify-center gap-2 mt-6">
-                            <p className="text-xs text-stone-400 ">Open your Favourite Editor...</p>
+                            <p className="text-xs text-stone-500 ">Open your Favourite Editor...may not work</p>
                             <Editors/>
                         </div>
 
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
         </>
     );
