@@ -29,7 +29,7 @@ function ImageSet(){
             width={1080}
             height={500}
             loading="eager"
-            className="mx-auto rounded-xl"
+            className="mx-auto rounded-lg outline-2 -outline-offset-1 outline-stone-600"
           />
         </div>
   )

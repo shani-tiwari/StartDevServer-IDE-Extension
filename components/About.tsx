@@ -16,8 +16,8 @@ export default function About(){
                 {
                     steps.map((step, i) => 
                         <div key={i} className={`flex items-center gap-4`}>
-                            <span className="text-lg text-foreground font-semibold bg-stone-200/80 rounded-md px-2 py-1 border border-stone-300/80">
-                                🔷
+                            <span className="text-lg text-foreground font-semibold bg-stone-200/80 rounded-md px-2 py-1 border border-stone-300/70">
+                                🟡
                             </span>
                             <p className="text-sm md:text-lg text-foreground font-medium tracking-wide">{step}</p>
                         </div>

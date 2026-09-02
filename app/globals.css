@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #e9e4e4ce;
+  --background: #e9e4e4da;
   --foreground: #171717ee;
-  --accent: #0dbdf3e2;
+  --accent: #f3f30de2;
 }
 /* 👆🏻 color should be a hash value */ 
 @theme inline {

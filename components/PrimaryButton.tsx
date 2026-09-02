@@ -32,8 +32,8 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
                     {label}
                 </span>
 
-                <span className="inline-flex items-center justify-center size-4 md:size-6 bg-accent text-white rounded-lg shadow-sm transition-transform duration-200 group-hover:scale-105 group-hover:rotate-6 group-active:scale-95">
-                    <span className="text-xs transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <span className="inline-flex items-center justify-center size-4 md:size-6 bg-accent text-foreground rounded-lg shadow-sm transition-transform duration-200 group-hover:scale-105 group-hover:rotate-6 group-active:scale-95">
+                    <span className="text-sm font-semibold transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                         ↗
                     </span>
                 </span>

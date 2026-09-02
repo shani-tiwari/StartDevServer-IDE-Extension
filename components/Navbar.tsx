@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PrimaryButton from "./PrimaryButton";
+import Link from "next/link";
 
 export default function Navbar() {
     return (
@@ -16,7 +16,12 @@ export default function Navbar() {
                         <Image src="/sds-logo.png" alt="Logo" width={80} height={80} />
                     </div>
                     <div className=" flex items-center justify-center">
-                        <PrimaryButton label="Install" className="px-4 py-1"/>
+                        <Link 
+                            href="https://github.com/shani-tiwari/StartDevServer-IDE-Extension" target="_blank" 
+                            className="flex items-center justify-center gap-2 px-3.5 py-1.5 bg-stone-100/80 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400 shadow-md shadow-stone-400/20 active:scale-98 hover:scale-102 transition-all duration-200 "
+                        >
+                            Star on Github  ⭐
+                        </Link>
                     </div>
 
                 </nav>
