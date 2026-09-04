@@ -65,7 +65,7 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
 
 
                         {/* Top Icon Badge */}
-                        <div className="mx-auto mb-4 flex h-12 w-12 text-2xl font-bold items-center justify-center rounded-2xl bg-accent/15 text-accent ring-8 ring-accent/5 transition-transform hover:scale-105">
+                        <div className="mx-auto mb-4 flex h-12 w-12 text-2xl font-bold items-center justify-center rounded-2xl bg-accent/10 text-accent ring-4 ring-accent/20 transition-transform hover:scale-105">
                             ✓
                         </div>
 
@@ -79,15 +79,15 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
                         </p>
 
                         {/* Command Display Snippet */}
-                        <div className="mt-2 w-fit mx-auto flex items-center justify-between gap-2 px-4 py-1 bg-stone-100/60 border border-stone-400/90 rounded-xl font-mono text-xs sm:text-sm text-stone-800">
+                        <div className="mt-2 w-fit mx-auto flex items-center justify-between gap-2 px-4 py-2 bg-stone-400 outline outline-offset-2 outline-stone-400/90 rounded-lg font-mono text-xs sm:text-sm text-stone-800">
                             <span className="truncate select-all font-semibold tracking-tight">
                                 {command} 
                             </span>
-                            <span className="text-accent font-bold text-xl">✓</span>
+                            <span className="text-accent text-xs px-3 py-0.5 bg-foreground rounded-full ">copied ✓</span>
                         </div>
 
 
-                        <div className="flex flex-col items-center justify-center gap-2 mt-6">
+                        <div className="flex flex-col items-center justify-center gap-2 mt-8">
                             <p className="text-xs text-stone-500 ">Open your Favourite Editor...may not work</p>
                             <Editors/>
                         </div>
@@ -140,7 +140,7 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
         window.location.assign(link);
     };
     return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 mt-2">
                 {editors.map(editor => 
                     <button
                       key={editor.name}
