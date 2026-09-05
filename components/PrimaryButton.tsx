@@ -70,13 +70,9 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
                         </div>
 
                         {/* Title */}
-                        <h2 className="text-xl font-bold tracking-tight text-stone-900 font-mono">
+                        <h2 className="text-lg font-bold tracking-tighter text-stone-900 font-mono">
                             Extension Name Copied!
                         </h2>
-                        {/* Description */}
-                        <p className="mt-1 px-6 text-sm text-stone-600 leading-relaxed">
-                            Just paste in search box & install.
-                        </p>
 
                         {/* Command Display Snippet */}
                         <div className="mt-2 w-fit mx-auto flex items-center justify-between gap-2 px-4 py-2 bg-stone-400 outline outline-offset-2 outline-stone-400/90 rounded-lg font-mono text-xs sm:text-sm text-stone-800">
@@ -86,9 +82,15 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
                             <span className="text-accent text-xs px-3 py-0.5 bg-foreground rounded-full ">copied ✓</span>
                         </div>
 
+                        <p className="font-bold text-accent text-3xl animate-bounce">
+                            ↓
+                        </p>
 
-                        <div className="flex flex-col items-center justify-center gap-2 mt-8">
-                            <p className="text-xs text-stone-500 ">Open your Favourite Editor...may not work</p>
+
+                        <div className="flex flex-col items-center justify-center gap-2">
+                            <p className="text-xs text-stone-600 text-balance">
+                                Open your Favourite Editor, paste copied text in the search box.
+                            </p>
                             <Editors/>
                         </div>
 

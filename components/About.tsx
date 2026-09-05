@@ -9,7 +9,7 @@ export default function About(){
     ];
 
   return (
-    <section className=" max-w-275 w-full mx-auto bg-black/1 py-10 rounded-xl md:my-12 flex flex-col font-sans border-b-2 border-b-stone-300 pb-8">
+    <section className=" max-w-275 px-4 w-full mx-auto bg-black/1 py-10 rounded-xl md:my-12 flex flex-col font-sans border-b-2 border-b-stone-300 pb-8">
         <div className="mx-auto">
             <h2 className="text-2xl text-foreground font-semibold mb-12 w-fit">Features...?</h2>
             <div className="flex flex-col justify-center gap-7  mx-auto w-fit">

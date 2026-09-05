@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer(){
   return (
-    <footer className="max-w-275 w-full p-2 h-28 flex flex-col gap-4 md:flex-row items-center justify-between  font-sans border-t border-t-stone-300 ">
+    <footer className="max-w-275 w-full p-2 pb-8 pt-12 flex flex-col gap-4 md:flex-row items-center justify-between  font-sans border-t border-t-stone-300 ">
 
         <a href="https://twelve.tools" 
             target="_blank">
@@ -16,7 +16,7 @@ export default function Footer(){
         </a>
 
         {/* copy right info  */}
-        <div className="flex flex-col ">
+        <div className="flex flex-col mt-4">
             <p className="text-sm text-foreground font-semibold">
                 2026 - Shani Tiwari
             </p>
