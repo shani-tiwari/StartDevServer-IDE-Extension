@@ -16,7 +16,7 @@ export default function Footer(){
         </a>
 
         {/* copy right info  */}
-        <div className="flex flex-col mt-4">
+        <div className="flex flex-col mt-4 md:mt-0">
             <p className="text-sm text-foreground font-semibold">
                 2026 - Shani Tiwari
             </p>

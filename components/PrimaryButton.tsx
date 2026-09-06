@@ -26,13 +26,13 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
                 type="button"
                 onClick={handleClick}
                 aria-label={label}
-                className={`${className} group relative flex items-center justify-center gap-3 bg-stone-100/80 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400 shadow-md shadow-stone-400/20 active:scale-98 hover:scale-102 transition-all duration-200 `}
+                className={`${className} group relative flex items-center justify-center gap-3 bg-stone-100 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-accent/20 active:scale-98 hover:scale-102 transition-all duration-200 `}
             >
                 <span className="text-sm md:text-base tracking-tighter text-foreground font-mono font-medium transition-colors">
                     {label}
                 </span>
 
-                <span className="inline-flex items-center justify-center size-4 md:size-6 bg-accent text-foreground rounded-lg shadow-sm transition-transform duration-200 group-hover:scale-105 group-hover:rotate-6 group-active:scale-95">
+                <span className="inline-flex items-center justify-center size-4 md:size-6 bg-accent/80 text-foreground rounded-lg shadow-sm transition-transform duration-200 group-hover:scale-105 group-hover:rotate-6 group-active:scale-95">
                     <span className="text-sm font-semibold transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                         ↗
                     </span>

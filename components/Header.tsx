@@ -13,19 +13,20 @@ import {motion} from 'framer-motion';
         transition={{duration: 0.3, delay: 0.25 }}        
        className="w-fit h-[56vh] md:h-[72vh] flex flex-col items-center justify-end border-b border-b-stone-300 pb-8"> 
 
-        <div className=" badge opacity-60 hover:opacity-80 flex items-center justify-center gap-3 bg-stone-100/80 rounded-full px-8 py-1 text-sm border border-yellow-400/60 shadow-md shadow-stone-400/20">
+        <div className=" badge opacity-60 hover:opacity-80 flex items-center justify-center gap-3 bg-stone-100/80 rounded-full px-5 py-1 text-sm border border-yellow-400/60 shadow-md shadow-stone-400/20">
 
           <div className="size-2 bg-accent rounded-md"></div>
           <Link href="https://open-vsx.org/extension/ShaniTiwari/sds-StartDevServer" 
             target="_blank" 
             rel="noopener noreferrer"
+            className='tracking-tight'
           >
-              700+ Installs in 48 hours 🚀
+              1400+ Installs in AntiGravity, Cursor. 🚀 
           </Link>
 
         </div>
 
-        <h1 className="w-[98%] md:w-2/3 text-center text-[22px] md:text-[44px] text-foreground md:leading-14.5">
+        <h1 className="w-[98%] md:w-[70%] text-center text-[22px] md:text-[44px] text-foreground md:leading-14.5">
           Start your Development server & auto redirect to new browser tab with localhost url → in a click.
         </h1>
 
