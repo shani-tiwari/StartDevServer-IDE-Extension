@@ -1,103 +1,39 @@
 "use client";
-import Image from "next/image";
+import { Check, Copy } from "lucide-react";
 import { useState } from "react";
-import { createPortal } from "react-dom";
 
 
 
-interface PrimaryButtonProps {
-    className?: string;
-    label: string;
-};
+export default function PrimaryButton({ className = ""}) {
 
-export default function PrimaryButton({ className = "", label}: PrimaryButtonProps) {
+    const [isCopied, setIsCopied] = useState(false);
 
-    const [showModal, setShowModal] = useState(false);
-    const command = "sds-StartDevServer"
-
-    const handleClick = async () => {
-        await copyToClipboard(command);
-        setShowModal(true);
+    function copyCommand(){
+        setIsCopied(true);
+        copyToClipboard("sds-StartDevServer")
+        setTimeout(() => {
+            setIsCopied(false);
+        }, 6000);
     };
 
     return (
         <>
             <button
                 type="button"
-                onClick={handleClick}
-                aria-label={label}
-                className={`${className} group relative flex items-center justify-center gap-3 bg-stone-100 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-accent/20 active:scale-98 hover:scale-102 transition-all duration-200 `}
+                onClick={() => copyCommand()}
+                className={`${className} group relative flex items-center justify-center gap-3 bg-stone-100 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-neutral-300/60 active:scale-98 hover:scale-102 transition-all duration-200 `}
             >
-                <span className="text-sm md:text-base tracking-tighter text-foreground font-mono font-medium transition-colors">
-                    {label}
-                </span>
-
-                <span className="inline-flex items-center justify-center size-4 md:size-6 bg-accent/80 text-foreground rounded-lg shadow-sm transition-transform duration-200 group-hover:scale-105 group-hover:rotate-6 group-active:scale-95">
-                    <span className="text-sm font-semibold transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                        ↗
+                {/* Command Display Snippet */}
+                <div className="w-fit mx-auto flex items-center justify-between gap-2  font-mono text-xs sm:text-sm text-stone-800">
+                    <span className="truncate tracking-tight">
+                        sds-StartDevServer
                     </span>
-                </span>
+                    <button onClick={() => copyCommand()} className="text-stone-800/60 hover:text-stone-800/80 hover:scale-103 transition-all duration-200">
+                        {isCopied ? <Check size={18}/> : <Copy size={18}/>}
+                    </button>
+                </div>
+
             </button>
-
-            {/* Modal Popup with Backdrop Blur */}
-            { showModal && createPortal(
-                <div
-                    role="dialog"
-                    aria-modal="true"
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-md transition-opacity duration-300 animate-in fade-in"
-                    onClick={(e) => {
-                        if (e.target === e.currentTarget) setShowModal(false);
-                    }}
-                >
-                    <div className="relative w-full max-w-md bg-stone-50/95 border border-stone-200/80 shadow-2xl rounded-3xl p-6 sm:p-8 text-center transform transition-all duration-300 scale-100 animate-in zoom-in-95">
-                        {/* Close button */}
-                        <button
-                            type="button"
-                            onClick={() => setShowModal(false)}
-                            className="absolute top-8 right-4 text-stone-400 hover:text-stone-700 active:scale-90 transition-all p-1.5 rounded-full hover:bg-stone-200/60"
-                            aria-label="Close modal"
-                        >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg> 
-                        </button>
-                        <Image src="/sds-logo.png" alt="Logo" width={80} height={80} />
-
-
-                        {/* Top Icon Badge */}
-                        <div className="mx-auto mb-4 flex h-12 w-12 text-2xl font-bold items-center justify-center rounded-2xl bg-accent/10 text-accent ring-4 ring-accent/20 transition-transform hover:scale-105">
-                            ✓
-                        </div>
-
-                        {/* Title */}
-                        <h2 className="text-lg font-bold tracking-tighter text-stone-900 font-mono">
-                            Extension Name Copied!
-                        </h2>
-
-                        {/* Command Display Snippet */}
-                        <div className="mt-2 w-fit mx-auto flex items-center justify-between gap-2 px-4 py-2 bg-stone-400 outline outline-offset-2 outline-stone-400/90 rounded-lg font-mono text-xs sm:text-sm text-stone-800">
-                            <span className="truncate select-all font-semibold tracking-tight">
-                                {command} 
-                            </span>
-                            <span className="text-accent text-xs px-3 py-0.5 bg-foreground rounded-full ">copied ✓</span>
-                        </div>
-
-                        <p className="font-bold text-accent text-3xl animate-bounce">
-                            ↓
-                        </p>
-
-
-                        <div className="flex flex-col items-center justify-center gap-2">
-                            <p className="text-xs text-stone-600 text-balance">
-                                Open your Favourite Editor, paste copied text in the search box.
-                            </p>
-                            <Editors/>
-                        </div>
-
-                    </div>
-                </div>,
-                document.body
-            )}
         </>
     );
 };
@@ -121,37 +57,3 @@ export default function PrimaryButton({ className = "", label}: PrimaryButtonPro
             console.error("Failed to copy command:", err);
         }
     };
-
-    function Editors(){
-        const editors = [
-        {
-            name: "VS Code",
-            open: "vscode://",
-        },
-        {
-            name: "AntiGravity",
-            open: "antigravity://",
-        },
-        {
-            name: "Cursor",
-            open: "cursor://",
-        },
-    ];
-    function openInEditor(link: string){
-        // window.location.href = link
-        window.location.assign(link);
-    };
-    return (
-        <div className="flex gap-2 mt-2">
-                {editors.map(editor => 
-                    <button
-                      key={editor.name}
-                      onClick={() => openInEditor(editor.open)}
-                      className="px-3 md:px-5 py-1.5 text-sm border border-stone-400/80 rounded-md bg-stone-100 cursor-pointer hover:bg-accent/40 active:scale-98 transition-all duration-300 "
-                    >
-                        {editor.name}
-                    </button>
-                )}
-        </div>
-    )
-}

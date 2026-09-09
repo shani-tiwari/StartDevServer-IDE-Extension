@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {motion} from 'framer-motion'
+import { Star } from "lucide-react";
 
 export default function Navbar() {
     return (
@@ -22,12 +23,13 @@ export default function Navbar() {
                     <div className="logo md:flex-1 flex items-center justify-center">  
                         <Image src="/sds-logo.png" alt="Logo" width={70} height={70} />
                     </div>
+
                     <div className="flex items-center justify-center">
                         <Link 
                             href="https://github.com/shani-tiwari/StartDevServer-IDE-Extension" target="_blank" 
-                            className=" flex items-center justify-center gap-2 px-3.5 py-1.5 bg-stone-100/80 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-stone-400/20 active:scale-98 hover:scale-102 transition-scale duration-200 "
+                            className=" flex items-center justify-center gap-2 px-3.5 py-1.5 bg-stone-100/80 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-stone-400/20 active:scale-98 hover:outline-stone-500 transition-scale duration-200 "
                         >
-                            Star on Github  ⭐
+                            Star on Github  <Star size={14} className="text-stone-500"/>
                         </Link>
                     </div>
 

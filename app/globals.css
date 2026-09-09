@@ -3,13 +3,11 @@
 :root {
   --background: #e9e4e4da;
   --foreground: #171717ee;
-  --accent: #f3f30de2;
 }
 /* 👆🏻 color should be a hash value */ 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
