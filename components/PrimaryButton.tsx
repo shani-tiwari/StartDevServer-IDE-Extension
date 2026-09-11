@@ -13,13 +13,12 @@ export default function PrimaryButton({ className = ""}) {
         copyToClipboard("sds-StartDevServer")
         setTimeout(() => {
             setIsCopied(false);
-        }, 6000);
+        }, 2000);
     };
 
     return (
         <>
             <button
-                type="button"
                 onClick={() => copyCommand()}
                 className={`${className} group relative flex items-center justify-center gap-3 bg-stone-100 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-neutral-300/60 active:scale-98 hover:scale-102 transition-all duration-200 `}
             >
@@ -28,9 +27,9 @@ export default function PrimaryButton({ className = ""}) {
                     <span className="truncate tracking-tight">
                         sds-StartDevServer
                     </span>
-                    <button onClick={() => copyCommand()} className="text-stone-800/60 hover:text-stone-800/80 hover:scale-103 transition-all duration-200">
+                    <span className="text-stone-800/60 hover:text-stone-800/80 hover:scale-103 transition-all duration-200">
                         {isCopied ? <Check size={18}/> : <Copy size={18}/>}
-                    </button>
+                    </span>
                 </div>
 
             </button>

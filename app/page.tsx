@@ -11,7 +11,7 @@ import Coffee from "@/components/Coffee";
 export default function Home() {
   return (
     <div className="w-full flex flex-col bg-background select-none">
-      <main className=" w-full md:max-w-6xl md:px-6 mx-auto flex flex-col gap-6 items-center border border-stone-300">
+      <main className=" w-full md:max-w-6xl px-1 md:px-6 mx-auto flex flex-col gap-6 items-center border border-stone-300">
 
         <Navbar/>
         <Header/>

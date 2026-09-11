@@ -14,6 +14,15 @@ export default function Coffee(){
             >
               Buy me a Coffee ☕
             </Link>
+            <div className="w-full flex justify-between px-4 gap-2">
+              {
+                Array.from({length: 6}).map((_, i) => (
+                  <div key={i} className="size-8 bg-stone-200 border-2 border-stone-400 rounded-md flex items-center justify-center">
+                    +
+                  </div>
+                ))
+              }
+            </div>
         </div>
     )
 };
