@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Coffee(){
     return (
-        <div className="my-8 w-full md:w-fit bg-black/5 border text-xs md:text-sm text-center text-stone-700/90 border-stone-400/80 rounded-xl flex flex-col items-center justify-center md:px-24  py-6 gap-1">
+        <div className="my-8 w-full md:w-fit bg-black/2 border text-xs md:text-sm text-center text-stone-700/90 border-stone-400/80 rounded-xl flex flex-col items-center justify-center md:px-24  py-6 gap-1">
             <p className="text-stone-800">Installed it ?</p> 
             <p className="text-stone-800">Saved your time ?</p> 
             <p className="text-stone-800">Fasten up your Workflow !</p> 
@@ -14,10 +14,10 @@ export default function Coffee(){
             >
               Buy me a Coffee ☕
             </Link>
-            <div className="w-full flex justify-between px-4 gap-2">
+            <div className="w-full flex justify-between px-4 gap-4 mt-4">
               {
                 Array.from({length: 6}).map((_, i) => (
-                  <div key={i} className="size-8 bg-stone-200 border-2 border-stone-400 rounded-md flex items-center justify-center">
+                  <div key={i} className="size-10 bg-stone-200 border-2 border-stone-400 rounded-md flex items-center justify-center">
                     +
                   </div>
                 ))

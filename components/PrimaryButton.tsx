@@ -20,13 +20,13 @@ export default function PrimaryButton({ className = ""}) {
         <>
             <button
                 onClick={() => copyCommand()}
-                className={`${className} group relative flex items-center justify-center gap-3 bg-stone-100 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-neutral-300/60 active:scale-98 hover:scale-102 transition-all duration-200 `}
+                className={`${className} group relative flex items-center justify-center gap-3 bg-stone-100 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-neutral-300/60 active:scale-98 hover:-translate-y-1 transition-all duration-200 `}
             >
                 {/* Command Display Snippet */}
-                <div className="w-fit mx-auto flex items-center justify-between gap-2  font-mono text-xs sm:text-sm text-stone-800">
-                    <span className="truncate tracking-tight">
+                <div className="w-fit mx-auto flex items-center justify-between gap-3 font-mono text-xs sm:text-sm text-stone-800">
+                    {/* <span> */}
                         sds-StartDevServer
-                    </span>
+                    {/* </span> */}
                     <span className="text-stone-800/60 hover:text-stone-800/80 hover:scale-103 transition-all duration-200">
                         {isCopied ? <Check size={18}/> : <Copy size={18}/>}
                     </span>

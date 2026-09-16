@@ -13,11 +13,31 @@ export default function Navbar() {
              transition={{duration: 0.3, damping: 25 }}
              className="fixed top-2 w-full z-99 px-2 "
             >
-                <nav className="max-w-275 px-4 md:px-6 mt-2 py-2 bg-background/20 backdrop-blur-xs flex justify-between mx-auto border border-stone-300 rounded-full">
+                <nav 
+                className="relative max-w-275 px-4  mt-2 py-2 bg-background/20 flex justify-between mx-auto border border-stone-300 rounded-full overflow-hidden">
+
+                    <div 
+                        style={{
+                        filter: 'url(#glassEffect)',
+                        backdropFilter: "blur(3px)",
+                        WebkitBackdropFilter: "blur(3px)",
+                        }}
+                        className="absolute inset-0 pointer-events-none -z-3 "
+                    />
+                     <svg aria-hidden="true" className="absolute h-0 w-0 overflow-hidden">
+                        <defs>
+                            <filter id="glassEffect" >
+                                <feTurbulence type="fractalNoise" baseFrequency="0.006 0.008" numOctaves="7"  result="noise"/>
+                                <feGaussianBlur in="noise" stdDeviation="3" result="softNoise" />
+                                <feDisplacementMap in="SourceGraphic" in2="softNoise" scale="20" />
+                                <feGaussianBlur in="displaced" stdDeviation="0.4" />
+                            </filter>
+                        </defs>
+                    </svg>
 
                     <div className="hidden md:flex items-center justify-center">
-                        <h1 className="relative text-xl text-foreground font-mono tracking-[-0.08rem]">
-                            Start Dev Server <sup className="bg-red-100 absolute top-2 -right-11 tracking-tight">(sds)</sup>
+                        <h1 className="relative text-xl text-foreground font-mono tracking-[-0.01rem]">
+                            SDS-StartDevServer 
                         </h1>
                     </div>
                     <div className="logo md:flex-1 flex items-center justify-center">  

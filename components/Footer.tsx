@@ -26,14 +26,14 @@ export default function Footer(){
         </div>
         {/* connect with me section  */}
         <div className="flex h-full items-center justify-center gap-4">
-            <Link className="hover:translate-y-1 transition-all duration-300" href='mailto:[shanitiwari2021@gmail.com]'>
+            <Link target="_blank" className="hover:translate-y-1 transition-all duration-300" href='mailto:[shanitiwari2021@gmail.com]'>
                 Email me
             </Link>
-            <Link className="hover:translate-y-1 transition-all duration-300" href='https://twitter.com/shanidevelops'>
+            <Link target="_blank" className="hover:translate-y-1 transition-all duration-300" href='https://twitter.com/shanidevelops'>
                 Twitter
             </Link>
-            <Link className="hover:translate-y-1 transition-all duration-300" href='https://github.com/shani-tiwari'>
-                GitHub
+            <Link target="_blank" className="hover:translate-y-1 transition-all duration-300" href='https://linkedin.com/in/shani-tiwarii'>
+                LinkedIn
             </Link>
         </div>
     </footer>

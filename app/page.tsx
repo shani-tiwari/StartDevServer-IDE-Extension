@@ -31,14 +31,14 @@ function ImageSet(){
          animate={{scale: 1, opacity: 1, filter: 'blur(0px)'}} 
          initial={{scale: 0.8, opacity: 0, filter: 'blur(5px)'}}
          transition={{duration: 0.5, delay: 0.35}}
-         className=" p-2 bg-stone-200/80 border border-stone-300 rounded-2xl my-8 shadow-md ">
+         className=" p-1 bg-stone-200/80 border border-stone-300 rounded-2xl my-8 shadow-md ">
           <Image
             src="/sds-preview.png"
             alt="SDS extension Preview page image"
             width={1080}
             height={500}
             loading="eager"
-            className="mx-auto rounded-lg outline-2 -outline-offset-1 outline-stone-600"
+            className="mx-auto rounded-xl outline-2 -outline-offset-1 outline-stone-600"
           />
         </motion.div>
   )
