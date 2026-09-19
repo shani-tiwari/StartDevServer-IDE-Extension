@@ -1,6 +1,7 @@
 "use client";
 import { Check, Copy } from "lucide-react";
-import { useState } from "react";
+import { h1 } from "motion/react-client";
+import { useEffect, useRef, useState } from "react";
 
 
 
@@ -16,18 +17,39 @@ export default function PrimaryButton({ className = ""}) {
         }, 2000);
     };
 
+    const refBtn = useRef<HTMLButtonElement>(null);
+    const refLabel = useRef<HTMLSpanElement>(null);
+
+    useEffect(() => {
+        const el = refBtn.current;
+        if (!el) return;
+
+        const update = (e: MouseEvent) => {
+            const rect = el.getBoundingClientRect();
+            const x = (e.clientX - rect.left - rect.width / 4) / 30;
+            const y = (e.clientY - rect.top - rect.height / 4) / 30;
+            if (refLabel.current) {
+                refLabel.current.style.transform =`rotateX(${y}deg) rotateY(${x}deg)`;
+            }
+        };
+        document.body.addEventListener("mousemove", update);
+        return () => document.body.removeEventListener("mousemove", update);
+    }, []);
+    
+
     return (
         <>
             <button
+                ref={refBtn}
                 onClick={() => copyCommand()}
-                className={`${className} group relative flex items-center justify-center gap-3 bg-stone-100 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-neutral-300/60 active:scale-98 hover:-translate-y-1 transition-all duration-200 `}
+                className={`${className} group relative flex items-center justify-center gap-3 bg-stone-100 rounded-full text-sm cursor-pointer outline-1 outline-offset-1 outline-stone-400/80 shadow-md shadow-neutral-300/60 active:scale-98 hover:-translate-y-1 transition-all duration-200 overflow-hidden`}
             >
                 {/* Command Display Snippet */}
                 <div className="w-fit mx-auto flex items-center justify-between gap-3 font-mono text-xs sm:text-sm text-stone-800">
-                    {/* <span> */}
+                    <span ref={refLabel}>
                         sds-StartDevServer
-                    {/* </span> */}
-                    <span className="text-stone-800/60 hover:text-stone-800/80 hover:scale-103 transition-all duration-200">
+                    </span>
+                    <span className="text-stone-800/60 hover:text-stone-800/80 hover:scale-103 active:scale-90 transition-all duration-200">
                         {isCopied ? <Check size={18}/> : <Copy size={18}/>}
                     </span>
                 </div>
