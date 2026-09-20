@@ -57,9 +57,9 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: [{url: "/sds-logo.png", sizes: "48x48", type: "image/png"},
-    {url: "/sds-logo.png", sizes: "192x192", type: "image/png"}],
-    apple: {url: "/sds-logo.png", sizes: "192x192", type: "image/png"}
+    icon: [{url: "/sds-logo-2.png", sizes: "48x48", type: "image/png"},
+    {url: "/sds-logo-2.png", sizes: "192x192", type: "image/png"}],
+    apple: {url: "/sds-logo-2.png", sizes: "192x192", type: "image/png"}
   },
 };
 
