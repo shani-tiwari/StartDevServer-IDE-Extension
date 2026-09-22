@@ -11,7 +11,7 @@ import {motion} from 'framer-motion';
         animate={{opacity: 1, y: 0, filter: 'blur(0px)'}} 
         initial={{opacity: 0, y: -20, filter: 'blur(5px)'}}
         transition={{duration: 0.3, delay: 0.25 }}        
-       className=" mt-6 w-fit h-[56vh] md:h-[72vh] flex flex-col items-center justify-end border-b border-b-stone-300 pb-8"
+       className="w-fit h-[56vh] md:h-[65vh] flex flex-col items-center justify-end border-b border-b-stone-300 pb-8"
       > 
 
         <div className=" badge opacity-80 mb-1 flex items-center justify-center gap-2 bg-stone-100/80 rounded-full px-5 py-1 text-xs border border-stone-400 shadow-md shadow-stone-400/20">

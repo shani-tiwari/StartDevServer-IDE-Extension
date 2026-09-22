@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import {motion} from 'framer-motion';
 import Coffee from "@/components/Coffee";
-import { useRef } from "react";
 import Cursor from "@/components/Cursor";
 
 
@@ -46,52 +45,4 @@ function ImageSet(){
         </motion.div>
   )
 };
-
-
-// function CursorFollower(){
-
-// //   ref={ball} is reused for every circle → only one element gets referenced.
-// // onMouseMove is attached to the circle itself → it won't reliably track the cursor.
-// // circle.bg contains CSS but you're putting it inside className → Tailwind won't understand it.
-// // size-${circle.size} is dynamic Tailwind → these classes may not be generated.
-// // duration-${...} is also dynamic → same problem.
-// // -z-${i} is dynamic → same issue.
-//     const ball = useRef<HTMLDivElement>(null);
-    
-//     const circles = [
-//       {
-//         size: 10,
-//         bg: 'rgba(0,0,0,0.8)',
-//       },
-//       {
-//         size: 8,
-//         bg: 'rgba(0,0,0,0.6)',
-//       },
-//       {
-//         size: 6,
-//         bg: 'rgba(0,0,0,0.4)',
-//       },
-//       {
-//         size: 4,
-//         bg: 'rgba(0,0,0,0.2)',
-//       },
-//     ];
-
-//   return (
-//     <>
-//       {
-//         circles.map((circle, i) => 
-//           <motion.div 
-//            key={i} 
-//            ref={ball}
-//            className={`absolute top-0 left-0 bg-[${circle.bg}] size-${circle.size} rounded-full -z-${i} transition-transform duration-${50 + 50*i} ease-out pointer-events-none`} 
-//            onMouseMove={(e) => { 
-//             ball.current!.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-//            }} 
-//           />
-//         )
-//       }
-//     </>
-//   )
-// }
 

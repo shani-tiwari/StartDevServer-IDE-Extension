@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f3ededf4;
+  --background: #f3eded;
   --foreground: #171717ee;
 }
 /* 👆🏻 color should be a hash value */ 

@@ -26,15 +26,16 @@ export default function Footer(){
         </div>
         {/* connect with me section  */}
         <div className="flex h-full items-center justify-center gap-4">
-            <Link target="_blank" className="hover:translate-y-1 transition-all duration-300" href='mailto:[shanitiwari2021@gmail.com]'>
-                Email me
-            </Link>
-            <Link target="_blank" className="hover:translate-y-1 transition-all duration-300" href='https://twitter.com/shanidevelops'>
-                Twitter
-            </Link>
-            <Link target="_blank" className="hover:translate-y-1 transition-all duration-300" href='https://linkedin.com/in/shani-tiwarii'>
-                LinkedIn
-            </Link>
+            {[
+                { name: "Email me", href: "mailto:[shanitiwari2021@gmail.com]" },
+                { name: "Twitter", href: "https://twitter.com/shanidevelops"},
+                { name: "LinkedIn", href: "https://linkedin.com/in/shani-tiwarii"}
+            ].map((link, i) => (
+                    <Link key={i} target="_blank" className="hover:translate-y-1 hover:underline hover:decoration-stone-500/80 transition-all duration-300" href={link.href}>
+                        {link.name}
+                    </Link>
+                ))
+            }
         </div>
     </footer>
   )

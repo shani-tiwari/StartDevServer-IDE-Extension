@@ -5,11 +5,13 @@ import { motion, useMotionValue, useSpring } from "motion/react";
 import { useEffect } from "react";
 
 const circles = [
-  { size:10, bg: "rgba(0,0,0,0.5)", stiffness: 500, damping: 30 },
-  { size: 9, bg: "rgba(0,0,0,0.4)", stiffness: 430, damping: 30 },
-  { size: 8, bg: "rgba(0,0,0,0.3)", stiffness: 360, damping: 30 },
-  { size: 7, bg: "rgba(0,0,0,0.2)", stiffness: 290, damping: 30 },
-  { size: 6, bg: "rgba(0,0,0,0.1)", stiffness: 250, damping: 30 },
+  { size: 9, bg: "rgba(0,0,0,0.7)", stiffness: 500, damping: 30 },
+  { size: 8, bg: "rgba(0,0,0,0.6)", stiffness: 450, damping: 30 },
+  { size: 7, bg: "rgba(0,0,0,0.5)", stiffness: 400, damping: 30 },
+  { size: 6, bg: "rgba(0,0,0,0.4)", stiffness: 350, damping: 30 },
+  { size: 5, bg: "rgba(0,0,0,0.3)", stiffness: 300, damping: 30 },
+  { size: 4, bg: "rgba(0,0,0,0.2)", stiffness: 300, damping: 30 },
+  { size: 3, bg: "rgba(0,0,0,0.1)", stiffness: 300, damping: 30 },
 ];
 
 export default function Cursor() {
@@ -18,6 +20,10 @@ export default function Cursor() {
   const y = useMotionValue(0);
 
   useEffect(() => {
+    if(window.innerWidth < 1024){ 
+      return;
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
       x.set(e.clientX);
       y.set(e.clientY);
@@ -42,7 +48,7 @@ export default function Cursor() {
         return (
           <motion.div
             key={i}
-            className="fixed top-0 left-0 rounded-full pointer-events-none z-9999"
+            className="hidden xl:flex fixed top-0 left-0 rounded-full pointer-events-none z-9999"
             style={{
             //   mixBlendMode: "color",
               width: circle.size,

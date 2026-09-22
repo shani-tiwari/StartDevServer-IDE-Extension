@@ -1,6 +1,5 @@
 "use client";
 import { Check, Copy } from "lucide-react";
-import { h1 } from "motion/react-client";
 import { useEffect, useRef, useState } from "react";
 
 
@@ -21,6 +20,9 @@ export default function PrimaryButton({ className = ""}) {
     const refLabel = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
+        if(window.innerWidth < 1024){
+            return;
+        }
         const el = refBtn.current;
         if (!el) return;
 
