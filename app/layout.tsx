@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL( "https://sds.shaniweb.com"),
-  title: "SDS(Start Dev Server) - Run React/Next.js Project in a Click.",
+  title: "SDS - Run Projects in a Click.",
   description: "Run development server & auto-redirect to browser tab with localhost URL in a single click. Must have Extension for React/Next.js developers.",
   alternates: {
     canonical: "/",

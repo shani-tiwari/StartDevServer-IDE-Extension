@@ -7,16 +7,24 @@ import Image from "next/image";
 import {motion} from 'framer-motion';
 import Coffee from "@/components/Coffee";
 import Cursor from "@/components/Cursor";
+import { useState } from "react";
 
 
 export default function Home() {
+    const [isHovering, setIsHovering] = useState(false);
+  
   return (
     <div className="w-full flex flex-col bg-background select-none">
-      <Cursor/>
+      <Cursor hovering={isHovering}/>
       <main className=" w-full md:max-w-6xl px-1 md:px-6 mx-auto flex flex-col gap-6 items-center border border-stone-300">
 
         <Navbar/>
-        <Header/>
+        <div  
+         onMouseEnter={() => setIsHovering(true)}
+         onMouseLeave={() => setIsHovering(false)}
+        >
+          <Header />
+        </div>
         <ImageSet/>
         <About/>
         <Coffee/>

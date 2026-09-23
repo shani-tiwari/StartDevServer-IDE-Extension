@@ -5,9 +5,9 @@ import {motion} from 'framer-motion';
 
  
  export default function Header(){
+
     return (
       <motion.header
-      // add stagger in children
         animate={{opacity: 1, y: 0, filter: 'blur(0px)'}} 
         initial={{opacity: 0, y: -20, filter: 'blur(5px)'}}
         transition={{duration: 0.3, delay: 0.25 }}        
@@ -27,7 +27,7 @@ import {motion} from 'framer-motion';
         </div>
 
         <h1 className="w-[98%] md:w-[70%] text-center text-[22px] md:text-[44px] text-foreground md:leading-14.5 tracking-[-0.015rem]">
-          Start your Development server & open it in a new browser tab → in 1 click
+          Start your Development server & open it in a new browser tab → in 1 click.
         </h1>
 
         <p className="w-[90%] text-xs md:text-base text-center mb-6 tracking-wide text-stone-700">
@@ -37,7 +37,7 @@ import {motion} from 'framer-motion';
         </p>
 
         <PrimaryButton className="px-7 py-2 text-[18px] "/>
-        <p className="text-xs md:text-sm text-stone-400 mt-2 max-w-46 text-center ">
+        <p className="text-xs md:text-sm text-stone-500/70 mt-2 text-center tracking-wider ">
           Copy & search in Extensions.
         </p>
 
