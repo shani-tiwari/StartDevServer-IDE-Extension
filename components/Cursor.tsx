@@ -36,17 +36,17 @@ export default function Cursor({hovering}: {hovering: boolean}) {
   return (
     <>
           <motion.div
-            className=" hidden xl:flex fixed top-0 left-0 rounded-full bg-white mix-blend-difference pointer-events-none z-999"
+            className=" hidden xl:flex fixed top-0 left-0 rounded-full bg-white/80 mix-blend-difference pointer-events-none z-999"
             style={{
-              width: hovering ? 40 : 15,
-              height: hovering ? 40 : 15,
-              translateX: "-50%",
+              width: hovering ? 40 : 30,
+              height: hovering ? 40 : 30,
+              translateX: "-50%", 
               translateY: "-50%",
               x: sprX,
               y: sprY,
-              filter: hovering ? 'blur(8px)' : 'blur(1px)',
-            }}
-          />
+              filter: hovering ? 'blur(8px)' : 'blur(2px)',
+            }}  
+          />  
     </>
   );
 }

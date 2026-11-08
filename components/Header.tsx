@@ -22,7 +22,7 @@ import {motion} from 'framer-motion';
             rel="noopener noreferrer"
             className='tracking-tight'
           >
-            2.2k+ Installs. Try it now !
+            3.5k+ Installs. Try it now !
           </Link>
         </div>
 
